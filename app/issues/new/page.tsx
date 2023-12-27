@@ -1,7 +1,8 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { Button, Callout, Text, TextField } from '@radix-ui/themes';
-import SimpleMDE from 'react-simplemde-editor';
+// Remove the import statement for 'SimpleMDE'
 import { useForm, Controller, set } from 'react-hook-form';
 import axios from 'axios';
 import 'easymde/dist/easymde.min.css';
@@ -12,6 +13,9 @@ import { createIssueSchema } from '@/app/validationSchema';
 import { z } from 'zod';
 
 type IssueFrom = z.infer<typeof createIssueSchema>;
+const SimpleMDE = dynamic(() => import('react-simplemde-editor'), {
+  ssr: false,
+});
 
 const NewIssuePage = () => {
   const router = useRouter();
