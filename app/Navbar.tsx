@@ -15,9 +15,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className='flex space-x-6 border-b mb-5 px-5 h-14 items-center'>
+    <nav className='flex space-x-6 items-center max-container padding-container relative z-30 py-5'>
       <Link href='/'>
-        <SiPivotaltracker />
+        <SiPivotaltracker size={32} />
       </Link>
       <ul className='flex space-x-6'>
         {links.map((link) => (
